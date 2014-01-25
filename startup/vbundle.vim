@@ -9,12 +9,25 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 "
 " My bundles here:
+
+" Colorscheme
+Bundle 'molokai'
+Bundle 'nelstrom/vim-mac-classic-theme'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'gmarik/ingretu'
+
 "
 " original repos on GitHub
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
+Bundle 'Lokaltog/vim-powerline'
+
+" haskell support
+Bundle 'scrooloose/syntastic'
+Bundle 'bitc/vim-hdevtools'
+
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'

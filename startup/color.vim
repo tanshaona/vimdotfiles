@@ -6,3 +6,5 @@ set t_Co=256
 syntax on
 set background=dark
 colorscheme solarized
+
+let g:solarized_termcolors=256
