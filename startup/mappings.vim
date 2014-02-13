@@ -1,23 +1,14 @@
+" base mappings {{{
 inoremap jk <esc>
 inoremap <esc> <nop>
 nnoremap <space> :
-
 " Yank to the end of line with Y, similar to D and C
 nnoremap Y y$
-
 " to use very magic in / or ? search
 nnoremap / /\v
 nnoremap ? ?\v
+"}}}
 
-" grep vimscript
-"nnoremap <silent> <Leader>g :grep -R '<cWORD>' .<cr>
-"nnoremap <Leader>g :execute "grep -R '<cWORD>' ."<cr>
-"nnoremap <Leader>g :exe "grep -R " . shellescape(expand("<cWORD>")) . " ."<cr>
-"nnoremap <Leader>g :silent! execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-nnoremap <Leader>cn :cnext<cr>
-nnoremap <Leader>cp :cprevious<cr>
-" in insert mode delete the line
-"inoremap <leader>d <esc>ddO
 
 "nnoremap <leader>1 :set list!<cr>
 

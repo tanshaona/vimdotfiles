@@ -1,7 +1,13 @@
 nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
-vnoremap <Leader>g GrepOperator(visualmode())<cr>
+vnoremap <Leader>g :<c-u>call GrepOperator(visualmode())<cr>
 
 function! GrepOperator(type)
-    echom a:type
-    echom "Test"
+    if a:type ==# 'v'
+        execute "normal! `<v`>y"
+    elseif a:type ==# 'char'
+        execute "normal! `[v`]y"
+    else
+        return
+    endif
+    echo @@
 endfunction
