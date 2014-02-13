@@ -13,8 +13,9 @@ nnoremap ? ?\v
 "nnoremap <silent> <Leader>g :grep -R '<cWORD>' .<cr>
 "nnoremap <Leader>g :execute "grep -R '<cWORD>' ."<cr>
 "nnoremap <Leader>g :exe "grep -R " . shellescape(expand("<cWORD>")) . " ."<cr>
-nnoremap <Leader>g :silent! execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-
+"nnoremap <Leader>g :silent! execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+nnoremap <Leader>cn :cnext<cr>
+nnoremap <Leader>cp :cprevious<cr>
 " in insert mode delete the line
 "inoremap <leader>d <esc>ddO
 
@@ -30,7 +31,7 @@ nnoremap <Leader>sh :nohl<cr>
 "}}}
 
 " normal command
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sc :source %<cr>
 " edit my virmrc file
 "noremap <leader>ev :CtrlP ~/.vim<cr>
 
