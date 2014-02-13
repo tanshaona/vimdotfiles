@@ -1,42 +1,87 @@
-"" 映射
 inoremap jk <esc>
 inoremap <esc> <nop>
-
 nnoremap <space> :
-nnoremap <leader>1 :set list!<cr>
+
+" Yank to the end of line with Y, similar to D and C
+nnoremap Y y$
+
+" to use very magic in / or ? search
+nnoremap / /\v
+nnoremap ? ?\v
+
+" grep vimscript
+"nnoremap <silent> <Leader>g :grep -R '<cWORD>' .<cr>
+"nnoremap <Leader>g :execute "grep -R '<cWORD>' ."<cr>
+"nnoremap <Leader>g :exe "grep -R " . shellescape(expand("<cWORD>")) . " ."<cr>
+nnoremap <Leader>g :silent! execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
+" in insert mode delete the line
+"inoremap <leader>d <esc>ddO
+
+"nnoremap <leader>1 :set list!<cr>
+
+" highlight trailing whitespace {{{
+" fix the problem : use \r instead of <cr>
+"nnoremap <Leader>w :execute "normal! :match Error " . '/\v.+ +$/' . "\r"<cr>
+nnoremap <Leader>w :match Error /\v.+ +$/<cr>
+nnoremap <Leader>W :match none<cr>
+"execute "normal! :nnoremap <Leader>rd dddd"
+nnoremap <Leader>sh :nohl<cr>
+"}}}
 
 " normal command
 nnoremap <leader>sv :source $MYVIMRC<cr>
+" edit my virmrc file
+"noremap <leader>ev :CtrlP ~/.vim<cr>
 
-" use in haskell, it will move to the haskell.vim
-" nnoremap -- 0i--jj
+" to make the word in  pair {{{
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+"}}}
 
-" upper the word
-inoremap <c-u> <esc>viwUea
-nnoremap <c-u> viwU
+" remap wincmd move command {{{
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+"}}}
 
+" upper the word {{{
+inoremap <leader>u <esc>viwUea
+nnoremap <leader>u viwU " we can just do g~w
+" }}}
+
+"function map, use prefix _ {{{
 " function define in function.vim
+" _ use the function mapping
+" _$ delete the trailing whitespace
+" _= auto indent the file
 nnoremap _$ :call Preserve("%s/\\s\\+$//e")<cr>
 nnoremap _= :call Preserve("normal gg=G")<cr>
+"}}}
 
-" Unmap the arrow keys
+" Unmap the arrow keys {{{
 no <down> ddp
-no <left> <nop>
-no <right> <nop>
+no <left> <Nop>
+no <right> <Nop>
 no <up> ddkP
-ino <down> <nop>
-ino <left> <nop>
-ino <right> <nop>
-ino <up> <nop>
-vno <down> <nop>
-vno <left> <nop>
-vno <right> <nop>
-vno <up> <nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
+" }}}
 
-"I really hate that things don't auto-center
+"I really hate that things don't auto-center {{{
 nnoremap G Gzz
 nnoremap n nzz
 nnoremap N Nzz
+"}}}
 
 " gO to create a new line below cursor in normal mode
 nnoremap gO O<esc>j
@@ -44,7 +89,7 @@ nnoremap gO O<esc>j
 " 'go' command)
 nnoremap g<c-o> o<esc>k
 
-"quick pairs
+"quick pairs {{{
 inoremap <leader>' ''<esc>i
 inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
@@ -52,15 +97,29 @@ inoremap <leader>[ []<esc>i
 inoremap <leader>< <><esc>i
 " imporant when enter in paris,then go to the next word
 inoremap <leader>> <esc>la
-" normal mode pair
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" }}}
 
 
-" abbreviations
+" abbreviations {{{
 iabbrev email wangchaohit2011@gmail.com
+" }}}
 
 
-" operator mapping
-onoremap p i(
-onoremap inp :<c-u>normal! f(vi(<cr>
-onoremap ilp :<c-u>normal! F(vi(<cr>
+" operator mapping {{{
+"onoremap p i(
+" in next (, in last (
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F(vi(<cr>
+onoremap in/ :<c-u>normal! f/lvf/h<cr>
+onoremap il/ :<c-u>normal! F/hvF/l<cr>
+" these are used in markdown
+" inside this section's heading
+onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+" around this section's heading
+onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+" }}}
+
+
+" dash mappings{{{
+nmap <silent> <leader>d <Plug>DashSearch
+" }}}

@@ -7,6 +7,8 @@ call vundle#rc()
 " let Vundle manage Vundle
 " " required! 
 Bundle 'gmarik/vundle'
+
+Bundle 'Shougo/neobundle.vim'
 "
 " My bundles here:
 
@@ -27,6 +29,8 @@ Bundle 'Lokaltog/vim-powerline'
 " haskell support
 Bundle 'scrooloose/syntastic'
 Bundle 'bitc/vim-hdevtools'
+Bundle 'eagletmt/ghcmod-vim'
+"Bundle 'lukerandall/haskellmode-vim'
 
 " vim-scripts repos
 Bundle 'L9'

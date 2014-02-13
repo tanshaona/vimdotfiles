@@ -1,10 +1,26 @@
 set encoding=utf-8
 "set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
-set listchars=tab:▸\ ,eol:¬
+set textwidth=80
+set numberwidth=4
+
+"set winwidth=80
+
+
+" When I close a tab, remove the buffer
+set nohidden
+
+set noignorecase
+
+"set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,nbsp:░,eol:¬
+set listchars=tab:▸\ ,nbsp:░,eol:¬,trail:·,extends:❱,precedes:❰
+"set listchars=tab:▸\ ,nbsp:░\ ,eol:¬
 set list
 
 filetype on
+" enable filetype detection and plugin loading
+filetype plugin on
 
 " taps and spaces
 " help tapstop
@@ -31,10 +47,10 @@ set noswapfile
 "set cursorcolumn
 "
 set laststatus=2              " always show status line.
-set shortmess=atI             " shortens messages
-set showcmd                   " display an incomplete command in statusline
+"set shortmess=atI             " shortens messages
+"set showcmd                   " display an incomplete command in statusline
 
-set statusline=%<%f\          " custom statusline
-set stl+=[%{&ff}]             " show fileformat
-set stl+=%y%m%r%=
-set stl+=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\          " custom statusline
+"set stl+=[%{&ff}]             " show fileformat
+"set stl+=%y%m%r%=
+"set stl+=%-14.(%l,%c%V%)\ %P
