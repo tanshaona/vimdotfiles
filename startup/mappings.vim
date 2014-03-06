@@ -17,12 +17,13 @@ nnoremap ? ?\v
 "nnoremap <Leader>w :execute "normal! :match Error " . '/\v.+ +$/' . "\r"<cr>
 nnoremap <Leader>w :match Error /\v.+ +$/<cr>
 nnoremap <Leader>W :match none<cr>
-"execute "normal! :nnoremap <Leader>rd dddd"
-nnoremap <Leader>sh :nohl<cr>
 "}}}
 
 " normal command
 nnoremap <leader>sc :source %<cr>
+
+nnoremap ,n :set number!<cr>
+nnoremap ,h :set hls!<cr>
 " edit my virmrc file
 "noremap <leader>ev :CtrlP ~/.vim<cr>
 
@@ -38,6 +39,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap <c-n> :MBEbn<cr>
+nnoremap <c-p> :MBEbp<cr>
+
+nnoremap <C-TAB> <C-w>w
+
+
+
 "}}}
 
 " upper the word {{{
@@ -75,11 +84,13 @@ nnoremap n nzz
 nnoremap N Nzz
 "}}}
 
+" insert whitespace line {{{
 " gO to create a new line below cursor in normal mode
 nnoremap gO O<esc>j
 " g<Ctrl+o> to create a new line above cursor (Ctrl to prevent collision with
 " 'go' command)
 nnoremap g<c-o> o<esc>k
+"}}}
 
 "quick pairs {{{
 inoremap <leader>' ''<esc>i
@@ -93,7 +104,7 @@ inoremap <leader>> <esc>la
 
 
 " abbreviations {{{
-iabbrev email wangchaohit2011@gmail.com
+"iabbrev email wangchaohit2011@gmail.com
 " }}}
 
 

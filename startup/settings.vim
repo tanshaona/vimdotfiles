@@ -6,21 +6,37 @@ set numberwidth=4
 
 "set winwidth=80
 
+set autoindent
+set autoread " when outside file has been modified, it will autoread
+set backspace=2
+set backupcopy=yes
+set clipboard=unnamed
+set directory-=.
+set ignorecase
+set incsearch   " show matches while typing
+set hlsearch    " highlight search
+set smartcase   " be case sensitive when input has a capital letter
+set scrolloff=5 " the numberline in the top
+set showcmd
+set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set wildmenu
+set wildmode=longest,list,full
+
+
 
 " When I close a tab, remove the buffer
 set nohidden
 
-set noignorecase
 
 "set listchars=tab:▸\ ,eol:¬
 "set listchars=tab:▸\ ,nbsp:░,eol:¬
-set listchars=tab:▸\ ,nbsp:░,eol:¬,trail:·,extends:❱,precedes:❰
+set listchars=tab:▸\ ,nbsp:░,eol:¬,trail:▫,extends:❱,precedes:❰
 "set listchars=tab:▸\ ,nbsp:░\ ,eol:¬
 set list
 
 filetype on
 " enable filetype detection and plugin loading
-filetype plugin on
+filetype plugin indent on
 
 " taps and spaces
 " help tapstop
@@ -28,12 +44,8 @@ set ts=8 sts=4 sw=4 expandtab
 "将Tab键自动转换成空格 真正需要Tab键时使用[Ctrl + V + Tab]
 set smarttab
 
-set hlsearch                   " highlight search
-set ignorecase                 " be case insensitive when searching
-set smartcase                  " be case sensitive when input has a capital letter
-set incsearch                  " show matches while typing
 
-"set number                     " set linenumber on
+set number                     " set linenumber on
 set relativenumber              " set linenumber on
 
 set history=1000               " set histroy commandline

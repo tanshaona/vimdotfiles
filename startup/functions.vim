@@ -39,3 +39,18 @@ function! Preserve(command)
 endfunction
 
 
+" option toggle {{{
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:return_to_window . "wincmd w"
+    else
+        let g:return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+nnoremap ,q :call QuickfixToggle()<cr>
+"}}}

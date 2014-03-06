@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/zhuanxu/.vim/bundle/dash.vim/script'
-let g:netrw_dirhist_2='/Users/zhuanxu/.vim/bundle/dash.vim'
-let g:netrw_dirhist_3='/Users/zhuanxu/.vim/bundle/dash.vim/plugin'
-let g:netrw_dirhist_4='/Users/zhuanxu/.vim/bundle/dash.vim'
-let g:netrw_dirhist_5='/Users/zhuanxu/.vim/bundle/dash.vim/plugin'
-let g:netrw_dirhist_6='/Users/zhuanxu'
-let g:netrw_dirhist_7='/Users/zhuanxu/.vim'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/zhuanxu/opt/git/maximum-awesome'
+let g:netrw_dirhist_2='/Users/zhuanxu/.vim/bundle/ghcmod-vim/after'
+let g:netrw_dirhist_3='/Users/zhuanxu/.vim/bundle/ghcmod-vim/after/ftplugin'
+let g:netrw_dirhist_4='/Users/zhuanxu/.vim/bundle/ghcmod-vim/after/ftplugin/haskell'

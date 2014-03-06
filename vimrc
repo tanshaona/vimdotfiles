@@ -6,6 +6,7 @@ source ~/.vim/startup/color.vim
 source ~/.vim/startup/functions.vim
 source ~/.vim/startup/mappings.vim
 source ~/.vim/startup/settings.vim
+source ~/.vim/startup/tmux.vim
 " }}}
 
 
@@ -18,3 +19,4 @@ source ~/.vim/syntax/haskell.vim
 source ~/.vim/syntax/vim.vim
 " }}}
 
+source ~/.vim/vimrc_after.vim

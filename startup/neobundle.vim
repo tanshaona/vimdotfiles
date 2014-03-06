@@ -13,14 +13,34 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
+" html development
+NeoBundle 'mattn/emmet-vim'
 
+" when entering Vim's insert mode on terminals that support it.
+"NeoBundle 'jszakmeister/vim-togglecursor'
+
+" auto compiled
+"NeoBundle 'xuhdev/SingleCompile'
+
+" show tagbar
+NeoBundle 'bitc/lushtags'
+NeoBundle 'majutsushi/tagbar'
+nn <leader>= :TagbarToggle<cr>
+
+"Surround.vim is all about "surroundings": parentheses, brackets,quotes,XML
+"tags, and more. The plugin provides mappings to easily delete, change and add
+"such surroundings in pairs.
+NeoBundle 'tpope/vim-surround'
+
+NeoBundle 'tanshaona/potion'
 
 NeoBundle 'fholgado/minibufexpl.vim'
+let g:miniBufExplCycleArround = 1
 NeoBundle 'scrooloose/nerdcommenter'
 
-"dash help
+"dash help {{{
 NeoBundle 'rizzatti/funcoo.vim'
-NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'rizzatti/dash.vim' "}}}
 
 " vimproc {{{
 NeoBundle 'Shougo/vimproc', {
@@ -96,12 +116,17 @@ NeoBundle 'tpope/vim-rails.git'
 
 " haskell support {{{
 NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'bitc/vim-hdevtools'
-"NeoBundle 'eagletmt/ghcmod-vim'
-"NeoBundle 'lukerandall/haskellmode-vim'
+NeoBundle 'bitc/vim-hdevtools'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'lukerandall/haskellmode-vim'
+"Configure browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/neco-ghc'
 let g:necoghc_enable_detailed_browse = 1
+"NeoBundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
+"NeoBundle 'adinapoli/cumino'
 " }}}
 
 " vim-scripts repos
@@ -111,6 +136,8 @@ NeoBundle 'FuzzyFinder'
 " NeoBundle 'git://git.wincent.com/command-t.git'
 " Git repos on your local machine (i.e. when working on your own plugin)
 " ...
+
+source ~/.vim/startup/maximum_awesome.vim
 
 filetype plugin indent on     " required!
 
